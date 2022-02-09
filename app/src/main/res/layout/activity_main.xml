@@ -4,18 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
+    android:backgroundTint="#fff"
+    android:backgroundTintMode="multiply"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp"
         android:layout_marginBottom="181dp"
-        android:background="@color/cardview_shadow_start_color"
+        android:background="#22577A"
         android:gravity="left"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         android:text="USD->LBP"
-        android:textAlignment="gravity"
-        android:textColor="@color/black"
+        android:textAlignment="center"
+        android:textColor="@color/white"
         android:textSize="80px"
         app:layout_constraintBottom_toTopOf="@+id/lbp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,10 +32,11 @@
     <EditText
         android:id="@+id/lbp"
         android:layout_width="185dp"
-        android:layout_height="0dp"
+        android:layout_height="70dp"
         android:layout_marginBottom="9dp"
+        android:background="@drawable/custom_text"
+        android:hint="LBP Amount"
         android:inputType="number"
-        android:text="LBP Amount"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/usd"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,9 +47,10 @@
     <EditText
         android:id="@+id/usd"
         android:layout_width="183dp"
-        android:layout_height="0dp"
+        android:layout_height="70dp"
+        android:background="@drawable/custom_text"
+        android:hint="USD Amount"
         android:inputType="number"
-        android:text="USD Amount"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,13 +61,43 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="111dp"
-        android:layout_height="0dp"
+        android:layout_width="116dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="318dp"
-        android:text="Button"
+        android:background="@drawable/custom_button"
+        android:onClick="convert"
+        android:text="Convert"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usd" />
+        app:layout_constraintTop_toBottomOf="@+id/usd"
+        app:rippleColor="@color/teal_700" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="117dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/custom_text"
+        android:text="1$ = 22,000L.L"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.255"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="126dp"
+        android:layout_height="350dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:srcCompat="@drawable/resource__"
+        tools:layout_editor_absoluteY="77dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
